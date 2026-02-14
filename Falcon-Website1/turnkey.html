@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Our Projects | Falcon Infra & Infotech Solutions</title>
+
+<link rel="stylesheet" href="css/styles.css">
+
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+<div class="nav-left">
+
+<img src="images/logo/falcon-logo.png" class="nav-logo">
+
+<h2 class="company-name">
+Falcon Infra & Infotech Solutions
+</h2>
+
+</div>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="index.html#services">Services</a>
+<a href="index.html#contact">Contact</a>
+</nav>
+
+</header>
+
+
+
+<section class="section">
+<h1>Turnkey Projects</h1>
+<div id="gallery"></div>
+</section>
+
+
+<!-- FULLSCREEN VIEWER -->
+
+<div id="fullscreenViewer">
+<span id="closeViewer">&times;</span>
+<img id="fullImage">
+</div>
+
+<script>
+const gallery = document.getElementById("gallery");
+
+// change folder name here
+const folder = "turnkey";
+
+for(let i=1;i<=100;i++){
+
+let img = document.createElement("img");
+img.src = `images/${folder}/${folder}${i}.jpg`;
+
+img.onerror = function(){
+this.style.display="none";
+};
+
+img.onclick = function(){
+document.getElementById("fullscreenViewer").style.display="flex";
+document.getElementById("fullImage").src = this.src;
+};
+
+gallery.appendChild(img);
+}
+
+document.getElementById("closeViewer").onclick = function(){
+document.getElementById("fullscreenViewer").style.display="none";
+};
+</script>
+<script src="js/gallery.js"></script>
+</body>
+</html>
